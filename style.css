@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "Soule Regular";
+  src: url("./soule_regular.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: 0;
+  color: white;
+  font-family: "Soule Regular", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: -1000;
+  background: url("./pic.jpg") fixed center/cover no-repeat;
+  filter: blur(5px);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  min-height: 100vh;
+}
+
+.app {
+  background: none;
+  width: 60vw;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border: 1px solid;
+}
+
+.form-control {
+  position: relative;
+}
+
+input {
+  font-family: inherit;
+  padding: 0 0 0.5rem 0.5rem;
+  background: transparent;
+  border-bottom: 3px solid #000;
+}
+
+label {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
+input:focus {
+  border-color: rgb(323, 101, 101);
+}
+
+input:focus + label {
+  color: rgb(323, 101, 101);
+  font-size: 90%;
+  transition: all 0.5s ease-in-out;
+  transform: translateY(-30px);
+}
+
+button {
+  font-size: 1.2em;
+  background: none;
+  width: max-content;
+  padding: 0.5rem 1rem;
+  border: 2px solid rgb(323, 101, 101);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: inset 0 0 0 40px rgb(323, 101, 101);
+  transition: all 0.5s ease-in;
+}
+
+button:active {
+  transform: scale(0.8);
+}
